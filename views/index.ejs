@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./index.css">
 </head>
 <body>
     
@@ -12,7 +12,7 @@
     <div Class="weather">
      <div class="temp">
         <div>
-            <h1 class="Temp">16</h1>
+            <h1 class="Temp"><%=data.current.temp_c%></h1>
         </div>
         
         <div>
@@ -20,27 +20,28 @@
         </div>
     </div>
      <div class ="location">
-        <h1 class="city">London</h1>
-        <h1 class="time">13:00-Friday 9,10 2021</h1>
+        <h1 class="city"><%= data.location.name%></h1>
+        <h1 class="time"><%= data.location.localtime%></h1>
     </div>
     <div class="image">
-        <h1>partly cloudy</h1>
+        <img class="icon" src="<%= data.current.condition.icon%>" alt="">
+        <h1 class="condition" ><%= data.current.condition.text %></h1>
 
     </div>
     </div>
     
     <div class="description">
         <div class="previous-cities">
-            <form action="/getTemp" method="POST">
+            <form action="/" method="POST">
                 <input class="input" placeholder="Enter country or city " type="text" name="city">
                 <input type="submit" class="btn">
             </form>
             
         </div>
         <div class="weather-details">
-            <div><h1 class="cloudy">Cloudy</h1> <h1 class="cp"></h1></div>
-            <div> <h1 class="humity">Humidity</h1 class="hp"></div>
-            <div> <h1 class="wind">Wind</h1 class="wp"></div>
+            <div class="cloud"><h1 class="Cloudy">Cloudy</h1> <h1 class="cp"><%=data.current.cloud+"%"%></h1></div>
+            <div class="humidity"> <h1 class="Humity">Humidity</h1><h1 class="hp"><%=data.current.humidity+"%"%></h1></div>
+            <div class="wind"> <h1 class="Wind">Wind</h1 > <h1 class="wp"><%=data.current.wind_kph+"km/h"%></h1></div>
             
            
            
@@ -48,4 +49,5 @@
     </div>
     
 </body>
+
 </html>
