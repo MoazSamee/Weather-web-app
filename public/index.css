@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+body
+{
+    
+    background-image:url("images/background.jpg"); ;
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    color: rgb(206, 190, 190);
+    font-family: 'Roboto', sans-serif;
+    
+}
+.btn{
+    background-color: rgb(157, 152, 182);
+    height:45px;
+    width:70px;
+    border:none;
+
+    
+}
+.weather
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-right: 300px;
+    margin-top: 452px;
+  
+}
+
+.input{
+ backface-visibility: hidden;
+ width: 360px;
+ height: 40px;
+
+ 
+ border-top: none;
+ border-left: none;
+ border-right: none;
+ background: none;
+ 
+
+}
+
+
+.description{
+
+    
+    background-color: rgb(0, 139, 139,0.3);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+   
+    
+}
+.weather-details{
+display: grid;
+grid-template-rows: 1fr 1fr 1fr;
+margin-left: 10px;
+}
+
+
+.temp
+{
+    
+    
+display: grid;
+grid-template-columns: 1fr 1fr;
+
+
+}
+
+.Temp{
+    padding-right: 0px;
+    margin-right: 0px;
+   margin-top: 10px;
+    font-size: 95px;
+    text-align: right;
+}
+.deg
+{
+    margin-top: 0px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+
+.city{
+
+    font-size: 45px;
+    margin-bottom: 2px;
+}
+
+
+.time{
+
+    margin-top: 0px;
+    padding-top: 0px;
+    font-size: 16px;
+}

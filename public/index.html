@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    
+
+    <div Class="weather">
+     <div class="temp">
+        <div>
+            <h1 class="Temp">16</h1>
+        </div>
+        
+        <div>
+            <h1 class="deg">o</h1>
+        </div>
+    </div>
+     <div class ="location">
+        <h1 class="city">London</h1>
+        <h1 class="time">13:00-Friday 9,10 2021</h1>
+    </div>
+    <div class="image">
+        <h1>partly cloudy</h1>
+
+    </div>
+    </div>
+    
+    <div class="description">
+        <div class="previous-cities">
+            <form action="/getTemp" method="POST">
+                <input class="input" placeholder="Enter country or city " type="text" name="city">
+                <input type="submit" class="btn">
+            </form>
+            
+        </div>
+        <div class="weather-details">
+            <div><h1 class="cloudy">Cloudy</h1> <h1 class="cp"></h1></div>
+            <div> <h1 class="humity">Humidity</h1 class="hp"></div>
+            <div> <h1 class="wind">Wind</h1 class="wp"></div>
+            
+           
+           
+        </div>
+    </div>
+    
+</body>
+</html>
