@@ -4,13 +4,18 @@ import morgan from "morgan";
 import axios from "axios";
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { API_KEY } from "./secret.js";
+import env from "dotenv";
 
 
 const __filename = fileURLToPath(import.meta.url);
+
 const __dirname = dirname(__filename);
+console.log(__filename);
+console.log(__dirname);
 
 const app = express();
+env.config();
+
 const port = 3000;
 app.use(express.static("views"));
 //app.use(morgan("dev"));
@@ -24,7 +29,7 @@ let api;
 
 app.get("/", async (req, res) => {
    
-    api=`http://api.weatherapi.com/v1/current.json?key=${API_KEY}&q=${city}&aqi=no`;
+    api=`http://api.weatherapi.com/v1/current.json?key=${process.env.API_KEY}&q=${city}&aqi=no`;
 
  try{
      data = await axios.get(api);
@@ -44,17 +49,7 @@ app.get("/", async (req, res) => {
 app.post("/", async(req, res) => { 
 
     city = req.body.city;
-    api=`http://api.weatherapi.com/v1/current.json?key=5dd87de4b1cc41d3a30153118240106&q=${city}&aqi=no`;
-
- try{
-     data = await axios.get(api);
-    
- }catch(error)
- {
-    console.log('error occured: ', error);
- }
-
- res.render("index.ejs",data)
+   res.redirect("/");
    
  });
 
